@@ -1,0 +1,19 @@
+version: '2'
+services:
+
+  mlnotebook:
+    build:
+      context: ./dockerfile
+      dockerfile: dockerfile-mlnotebook
+    container_name: mlnotebook
+    ports:
+      - "8889:8888"
+    command: start-notebook.sh --NotebookApp.token=''
+    volumes:
+      - ./code:/home/jovyan/work
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge

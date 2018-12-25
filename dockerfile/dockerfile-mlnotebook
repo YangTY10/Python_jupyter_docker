@@ -1,0 +1,3 @@
+#指定基底文件為jupyter/datascience-notebook
+FROM jupyter/datascience-notebook
+RUN pip install --upgrade pip
